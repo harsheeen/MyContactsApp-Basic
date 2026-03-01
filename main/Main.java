@@ -55,6 +55,7 @@ public class Main {
                 System.out.println("User registered successfully!");
             }
 
+
             // Login
             System.out.println("\n=== User Login ===");
             System.out.print("Enter email: ");
@@ -86,7 +87,7 @@ public class Main {
                         System.out.println("8. Filter Contacts (UC-10)");
                         System.out.println("9. Create Tag (UC-11)");
                         System.out.println("10. Apply Tag to Contact (UC-12)");
-                        System.out.println("11. Logout");
+                        System.out.println("11. Logout from the session ");
 
                         String option = scanner.nextLine();
                         switch (option) {
