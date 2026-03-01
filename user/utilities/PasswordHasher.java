@@ -20,6 +20,6 @@ public class PasswordHasher {
             sb.append(String.format("%02x", b));
         }
 
-        return sb.toString();
+        return sb.toString(); //return the password in hashcode
     }
 }
