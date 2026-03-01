@@ -10,7 +10,7 @@ package com.seveneleven.mycontactsapp.contact;
 
 public class ContactViewer {
     public static void viewContact(CreateContact contact) {
-        System.out.println("=== Contact Details ===");
+        System.out.println("==== Contact Details ====");
         System.out.println(contact.toString());
     }
 }
