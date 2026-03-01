@@ -1,16 +1,32 @@
 package com.seveneleven.mycontactsapp.auth;
 
 import com.seveneleven.mycontactsapp.user.model.User;
-import com.seveneleven.mycontactsapp.user.model.UserRepository;
 import com.seveneleven.mycontactsapp.user.utilities.PasswordHasher;
 
-public class BasicAuth implements Authentication { 
-	@Override public User login(String email, String password) { 
-		User user = UserRepository.findByEmail(email); 
-		if (user != null) { String hashedInput = PasswordHasher.hash(password); 
-		if (hashedInput.equals(PasswordHasher.hash(password))) 
-{ return user;
-} 
-} return null; // login failed } }
-	}
+import java.security.NoSuchAlgorithmException;
+import java.util.Optional;
+
+public class BasicAuth implements Authentication {
+
+    private final User registeredUser;
+
+    // Constructor that accepts a User
+    public BasicAuth(User registeredUser) {
+        this.registeredUser = registeredUser;
+    }
+
+    @Override
+    public Optional<String> login(String email, String password) {
+        try {
+            String hashedInput = PasswordHasher.hashPassword(password);
+
+            if (registeredUser.getEmail().equals(email) &&
+                registeredUser.getPasswordHash().equals(hashedInput)) {
+                return Optional.of("Login successful");
+            }
+        } catch (NoSuchAlgorithmException e) {
+            return Optional.empty();
+        }
+        return Optional.empty();
+    }
 }

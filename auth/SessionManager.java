@@ -4,22 +4,25 @@ import java.util.*;
 
 import com.seveneleven.mycontactsapp.user.model.User;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 public class SessionManager {
-    private Map<Integer, User> sessions = new HashMap<>();
-    private int sessionCounter = 0;
+    private final Map<String, String> activeSessions = new HashMap<>();
 
-    public int createSession(User user) {
-        sessionCounter++;
-        sessions.put(sessionCounter, user);
-        return sessionCounter; // return numeric session ID
+    public String createSession(String username) {
+        String sessionId = UUID.randomUUID().toString();
+        activeSessions.put(sessionId, username);
+        return sessionId;
     }
 
-    public User getUserBySession(int sessionId) {
-        return sessions.get(sessionId);
+    public boolean validateSession(String sessionId) {
+        return activeSessions.containsKey(sessionId);
     }
 
-    public void endSession(int sessionId) {
-        sessions.remove(sessionId);
+    public void endSession(String sessionId) {
+        activeSessions.remove(sessionId);
     }
 }
+
