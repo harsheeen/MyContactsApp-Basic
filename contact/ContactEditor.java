@@ -1,3 +1,12 @@
+
+
+/* * Poject - MyContactApp
+ * Version 6.0  User modifies existing contact information.
+ * User views complete information of a specific contact.
+ * @Author Harsheen Kaur
+ * 
+ */
+
 package com.seveneleven.mycontactsapp.contact;
 
 public class ContactEditor {
