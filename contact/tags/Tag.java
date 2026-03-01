@@ -28,6 +28,7 @@ public class Tag {
 
     @Override
     public int hashCode() {
+    	System.out.println();
         return Objects.hash(name.toLowerCase());
     }
 
