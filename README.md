@@ -1,7 +1,6 @@
 # MyContactsAppBasic
 
-A simple Java application for managing contacts with authentication, user profiles, and contact operations.  
-
+A simple Java application for managing contacts with authentication, contact operations such as crate, update, view, edit, and delete. This application also provides mtag management in later use cases. 
 ## Use Cases
 
 ### 1. User Registration
