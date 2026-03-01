@@ -9,17 +9,13 @@ package com.seveneleven.mycontactsapp.contact;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
 public class ContactSearcher {
-
     // Search by name
     public static List<CreateContact> searchByName(List<CreateContact> contacts, String name) {
         return contacts.stream()
                 .filter(c -> c.getName().equalsIgnoreCase(name) || c.getName().contains(name))
                 .collect(Collectors.toList());
     }
-
-    // Search by phone
     
 
     // Search by tag (example: email suffix used as tag)
