@@ -1,20 +1,25 @@
+/* * Poject - MyContactApp
+ * Version 2.0 The password is hashed using messge digest 
+ * User views complete information of a specific contact.
+ * @Author Harsheen Kaur
+ * 
+ */
 package com.seveneleven.mycontactsapp.user.utilities;
 
-import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Base64;
 
 public class PasswordHasher {
 
-    // Hash a password using SHA-256 and return a Base64 string
-    public static String hash(String password) {
-        try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-            byte[] hashedBytes = md.digest(password.getBytes(StandardCharsets.UTF_8));
-            return Base64.getEncoder().encodeToString(hashedBytes);
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("SHA-256 algorithm not available", e);
+    public static String hashPassword(String password) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-256"); // md is object of type MessageDigest
+        byte[] hashedBytes = md.digest(password.getBytes());
+        StringBuilder sb = new StringBuilder();
+
+        for (byte b : hashedBytes) {
+            sb.append(String.format("%02x", b));
         }
+
+        return sb.toString();
     }
 }
