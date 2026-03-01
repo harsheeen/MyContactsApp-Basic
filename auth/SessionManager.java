@@ -1,3 +1,7 @@
+/*PROJECT - MYCONTACTAPP
+@Author Harsheen
+@Version 2.0 - Session Management */
+
 package com.seveneleven.mycontactsapp.auth;
 
 import java.util.*;

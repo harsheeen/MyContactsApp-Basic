@@ -1,3 +1,8 @@
+/*PROJECT - MYCONTACTAPP
+@Author Harsheen
+@Version 2.0 - BasiAuthentication compares the input hashcode with user input hash code */
+
+
 package com.seveneleven.mycontactsapp.auth;
 
 import com.seveneleven.mycontactsapp.user.model.User;

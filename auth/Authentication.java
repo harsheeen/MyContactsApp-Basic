@@ -1,3 +1,8 @@
+
+/*PROJECT - MYCONTACTAPP
+@Author Harsheen
+@Version 2.0 - Authentication Interface, implemented by Basic Authentication */
+
 package com.seveneleven.mycontactsapp.auth;
 
 import java.util.Optional;
